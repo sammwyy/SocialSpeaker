@@ -1,29 +1,35 @@
 class Injector {
-    constructor () {
-        this.handleMutation = this.handleMutation.bind(this);
-        this.initialInjection = this.initialInjection.bind(this);
+  constructor() {
+    this.handleMutation = this.handleMutation.bind(this);
+    this.initialInjection = this.initialInjection.bind(this);
 
-        this.observer = new Observer(this.handleMutation);
-        this.injected = [];
-    }
+    this.observer = new Observer(this.handleMutation);
+    this.injected = [];
+  }
 
-    handleMutation () {}
-    initialInjection () {}
+  handleMutation() {}
+  initialInjection() {}
 
-    isInjected (elem) {
-        return this.injected.includes(elem);
-    }
+  isInjected(elem) {
+    return this.injected.includes(elem);
+  }
 
-    setInjected (elem) {
-        this.injected.push(elem);
-    }
+  setInjected(elem) {
+    this.injected.push(elem);
+  }
 
-    start () {
-        this.observer.start();
-        this.initialInjection();
-    }
+  start() {
+    this.observer.start();
+    this.initialInjection();
+  }
 }
 
 Injector.createInjector = () => {
+  const host = window.location.hostname;
+
+  if (host.includes("twitter.com")) {
     return new TwitterInjector();
-}
+  }
+
+  return null;
+};

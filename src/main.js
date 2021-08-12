@@ -1,11 +1,13 @@
 class SocialSpeaker {
-    constructor () {
-        this.injector = Injector.createInjector();
-    }
+  constructor() {
+    this.injector = Injector.createInjector();
+  }
 
-    start () {
-        this.injector.start();
+  start() {
+    if (this.injector) {
+      this.injector.start();
     }
+  }
 }
 
 const app = new SocialSpeaker();
