@@ -29,6 +29,8 @@ Injector.createInjector = () => {
 
   if (host.includes("twitter.com")) {
     return new TwitterInjector();
+  } else if (host.includes("facebook.com")) {
+    return new FacebookInjector();
   }
 
   return null;

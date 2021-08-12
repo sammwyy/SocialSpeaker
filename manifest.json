@@ -1,19 +1,20 @@
 {
-    "manifest_version": 2,
-    "name": "Social Speaker",
-    "description": "Social media and Website TTS",
-    "version": "0.0.1",
-    "content_scripts": [
-        {
-           "matches":    ["https://*/*"],
-           "js":         [
-               "src/injectors/injector.js",
-               "src/injectors/twitter.js",
-               "src/observer.js",
-               "src/tts.js",
-               "src/utils.js",
-               "src/main.js"
-            ]
-        }
-     ]
+  "manifest_version": 2,
+  "name": "Social Speaker",
+  "description": "Social media and Website TTS",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": [
+        "src/injectors/injector.js",
+        "src/injectors/facebook.js",
+        "src/injectors/twitter.js",
+        "src/observer.js",
+        "src/tts.js",
+        "src/utils.js",
+        "src/main.js"
+      ]
+    }
+  ]
 }
