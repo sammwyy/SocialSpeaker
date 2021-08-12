@@ -1,6 +1,10 @@
 const Utils = {};
 
 Utils.compareClasses = (element, classList) => {
+    if (typeof(classList) == "string") {
+        classList = classList.split(" ");
+    }
+    
     if (!element.classList) {
         return false;
     }
@@ -15,6 +19,10 @@ Utils.compareClasses = (element, classList) => {
 }
 
 Utils.findByClasses = (classList) => {
+    if (typeof(classList) == "string") {
+        classList = classList.split(" ");
+    }
+    
     let elements = document.getElementsByClassName(classList.shift());
 
     for (let element of elements) {

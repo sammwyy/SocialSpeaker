@@ -8,7 +8,7 @@ class Observer {
     }
 
     start () {
-        this.observer.observe(document.querySelector('body'), {
+        this.observer.observe(document.body, {
             attributes: true,
             childList: true,
             characterData: true,
